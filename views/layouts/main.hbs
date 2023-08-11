@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Latest compiled and minified Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css" />
+
+
+    <title>WEB322 - Assignment 6 - Sumanjit Kaur</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+
+        <div class="col-2"></div>
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">WEB322 - Assignment 6 - Sumanjit Kaur</a>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav">
+            {{#navLink "/shop"}}Shop{{/navLink}} &nbsp;&nbsp;&nbsp;&nbsp;
+            {{#navLink "/about"}}About{{/navLink}}&nbsp;&nbsp;&nbsp;&nbsp;
+          </ul>
+
+          {{#if session.user}}
+                <form class="navbar-form navbar-right">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;{{session.user.userName}}&nbsp;&nbsp;<span
+                                class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="userMenu">
+                            <li><a href="/userHistory">User History</a></li>
+                            <li><a href="/logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                </form>
+          <ul class="nav navbar-nav navbar-right">
+            {{#navLink "/items"}}Items{{/navLink}}
+            {{#navLink "/categories"}}Categories{{/navLink}}
+          </ul>
+          {{else}}
+            <form class="navbar-form navbar-right">
+              <a href="/register" class="btn btn-success"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;Register</a>
+              <a href="/login" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Log In</a>
+            </form>
+          {{/if}}
+
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+    <div class="container" style="padding-top: 90px;">
+      {{{body}}}
+    </div>
+
+    <!-- Latest compiled and minified jQuery 3.6.0 JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified Bootstrap 3.4.1 JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
