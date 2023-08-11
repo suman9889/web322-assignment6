@@ -8,9 +8,9 @@
 *  Student ID: 129642203
 *  Date: 11/8/2023 
 *
-*  Cyclic Web App URL: https://tiny-trench-coat.cyclic.app/about
+*  Cyclic Web App URL: https://lemon-buffalo-tux.cyclic.app/about
 *
-*  GitHub Repository URL: https://github.com/sumanjit05/web322-assignment5
+*  GitHub Repository URL: https://github.com/suman9889/web322-assignment6
 *
 ********************************************************************************/ 
 
